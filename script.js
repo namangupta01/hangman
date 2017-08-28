@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
 	ref =[];
 	completed=0;
-	guessesRemaining = 10;
+	guessesRemaining = 7;
 	totalWords = WORDS.length;
 	randomIndex = parseInt(Math.random()*totalWords);
 	selectedWord = WORDS[randomIndex].toUpperCase();
