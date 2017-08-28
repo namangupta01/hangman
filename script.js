@@ -22,10 +22,8 @@ window.addEventListener("load",function(){
 		keyPressed = this.innerText;
 		found=0;
 		keyCode = keyPressed.codePointAt(0);
-		if(ref[keyCode-65]!=1 %% guessesRemaining>0){
+		if(ref[keyCode-65]!=1 && guessesRemaining>0 &&completed<selectedWordLength){
 			ref[keyCode-65]=1;
-			button = document.getElementById(keyPressed);
-			button.className+=" strike"
 			for(i=0;i<selectedWordLength;i++){
 				if(selectedWord[i]==keyPressed){
 					found=1;
@@ -38,6 +36,12 @@ window.addEventListener("load",function(){
 					guessesRemaining = guessesRemaining - 1;
 					guess = document.getElementById("guess");
 					guess.innerText = ""+guessesRemaining;
+					button = document.getElementById(keyPressed);
+					button.className+=" strike-red"	
+			}	
+			else{
+					button = document.getElementById(keyPressed);
+					button.className+=" strike-blue"
 			}
 			if(completed==selectedWordLength){
 				alert("Congratulations you win!");
