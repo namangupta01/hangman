@@ -22,7 +22,7 @@ window.addEventListener("load",function(){
 		keyPressed = this.innerText;
 		found=0;
 		keyCode = keyPressed.codePointAt(0);
-		if(ref[keyCode-65]!=1){
+		if(ref[keyCode-65]!=1 %% guessesRemaining>0){
 			ref[keyCode-65]=1;
 			button = document.getElementById(keyPressed);
 			button.className+=" strike"
